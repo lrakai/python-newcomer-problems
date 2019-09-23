@@ -2,9 +2,10 @@ import sys
 import os
 import unittest
 
-sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/../src")
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/../solutions")
 from challenge_one import string_fun
 from challenge_two import append
+from challenge_three import list_uniqueness
 
 class TestChallenge(unittest.TestCase):
 
@@ -18,6 +19,12 @@ class TestChallenge(unittest.TestCase):
         append(l, item)
         self.assertEqual(l, solution)
 
+    def _check_list_uniqueness(self, l, length, unique):
+        dictionary = list_uniqueness(l)
+        self.assertEqual(type(dictionary), dict)
+        self.assertEqual(dictionary['list_length'], length)
+        self.assertEqual(dictionary['unique_items'], unique)
+
     def test_challenge_one(self):
         self._check_string_fun(string_fun('Hello World!'), False, True, 'Hello-World!')
         self._check_string_fun(string_fun('ThisIsAChallenge'), True, False, 'ThisIsAChallenge')
@@ -28,7 +35,8 @@ class TestChallenge(unittest.TestCase):
         self._check_append(['a','b', 'c'], 'd', ['a','b','c','d'])
 
     def test_challenge_three(self):
-        pass
+        self._check_list_uniqueness([1, 2, 2, 4], 4, 3)
+        self._check_list_uniqueness(['a', 'a', 'a', 1], 4, 2)
 
 
 if __name__ == '__main__':
