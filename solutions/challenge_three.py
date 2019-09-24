@@ -1,7 +1,7 @@
 def list_uniqueness(the_list):
     '''
     Return a dictionary with two key-value pairs:
-      1. The key 'list_length' stores the lenght of the_list as its value.
+      1. The key 'list_length' stores the length of the_list as its value.
       2. The key 'unique_items' stores the number of unique items in the_list as its value.
     Arguments
     the_list: A list
