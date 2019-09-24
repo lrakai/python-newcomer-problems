@@ -2,7 +2,7 @@ import sys
 import os
 import unittest
 
-sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/../src")
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/../solutions")
 from challenge_one import string_fun
 from challenge_two import append
 from challenge_three import list_uniqueness
